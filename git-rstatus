@@ -44,7 +44,7 @@ git --no-pager stash list --oneline
 
 if (( "$fetch" == 1 )); then
 	green "Fetching $source..."
-	git --no-pager fetch "$source" -v
+	git --no-pager fetch "$source"
 fi
 
 green "Incoming changes:"
