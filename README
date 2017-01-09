@@ -1,19 +1,11 @@
-Many of these have been grabbed from various sources around the interwebs. I unfortunately was terrible about
-keeping track of where they came from. If I have one of your scripts in this collection and you would like
-credit (or removal) just contact me at ddollar@gmail.com
+This repository started its way as a fork of ddollar/git-utils. Some of the utilities here are from there, others are my own 
+creation, some loosely based on ddollar's versions.
 
-git-addremove         # add/remove all changes from the index, similar to hg addremove
-git-incoming          # shows incoming commits from the tracked (or specified) branch
-git-index             # show the current staging area
-git-last              # git last 3 (show the last 3 commits)
-git-outgoing          # show outgoing commits to the tracked (or specified) branch
-git-patch             # format a patch and put it into ~/Documents/Patches/<Project>/<branch>.patch
-git-pull-request      # manipulate github pull requests
-git-rank-contributors # rank all project contributors
-git-rm-conflicts      # clean up all merge conflicts
-git-switch            # like checkout, but with auto-stash
-git-wip               # store a current "work in progress" commit
-git-unwip             # break a work in progress commit bringing the changes back to unstaged
-git-wtf               # show the current status of your git repository, including feature branches
+git-addremove     - Adds added files, removes deleted files
+git-last          - Simple alias; shows the last few commits (defaults to 1, accepts a number for different number of commits)
+git-tree          - Shows a graph of the repository's commits, branches and merges
 
-Many of these scripts come from http://github.com/jwiegley/git-scripts
+git-incoming      - Shows incoming changes (this doesn't contact the server, so it's recommended to use git fetch first)
+git-outgoing      - Shows outgoing changes (which would be pushed to a remote server with git push)
+git-rstatus       - Shows complete status as compared to the origin (or other specified remote branch)
+git-sync          - Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords

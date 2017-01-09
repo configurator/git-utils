@@ -1,2 +1,0 @@
-#!/bin/sh
-[[ `git log --format="%s" -1` -eq "wip" ]] && git reset head^
