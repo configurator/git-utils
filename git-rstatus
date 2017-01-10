@@ -17,6 +17,10 @@ usage() {
 	exit 1
 }
 
+fixcolors() {
+	sed 's/\x1B\[m/\x1B\[0m/'
+}
+
 fetch=1
 
 while [[ "$1" == -* ]]; do
@@ -36,11 +40,11 @@ parse_source_args "$@"
 clear
 
 green Local status
-git --no-pager status
+git --no-pager -c color.ui=always status | fixcolors
 (( "$?" != 0 )) && exit $?
 
 green Stashes
-git --no-pager stash list --oneline
+git --no-pager -c color.ui=always stash list --oneline | fixcolors
 
 if (( "$fetch" == 1 )); then
 	green "Fetching $source..."
@@ -48,9 +52,9 @@ if (( "$fetch" == 1 )); then
 fi
 
 green "Incoming changes:"
-"$dir/git-incoming" --no-pager "$branch"
+"$dir/git-incoming" --no-pager '-c color.ui=always' "$branch" | fixcolors
 
 green "Outgoing changes:"
-"$dir/git-outgoing" --no-pager "$branch"
+"$dir/git-outgoing" --no-pager '-c color.ui=always' "$branch" | fixcolors
 
 echo
