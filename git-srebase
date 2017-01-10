@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. "$(dirname "$(readlink -m "$0")")/bash-functions"
+
+stash=true
+old_stash_count=$(git stash list | wc -l)
+
+green Stashing
+git stash save
+
+new_stash_count=$(git stash list | wc -l)
+stash=true
+if (( $new_stash_count == $old_stash_count )); then
+	# The stash save didn't do anything; turn off stashing so we don't pop anything either.
+	stash=0
+fi
+
+green Rebasing
+git rebase -i "$@" || exit $?
+
+if $stash; then
+	green Popping the stash
+	git stash pop
+fi
+
+echo

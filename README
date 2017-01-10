@@ -10,3 +10,5 @@ git-incoming      - Shows incoming changes (this doesn't contact the server, so 
 git-outgoing      - Shows outgoing changes (which would be pushed to a remote server with git push)
 git-rstatus       - Shows complete status as compared to the origin (or other specified remote branch)
 git-sync          - Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords
+
+git-srebase       - Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
