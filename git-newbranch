@@ -1,0 +1,33 @@
+#!/bin/bash
+
+dir="$(dirname "$(readlink -m "$0")")"
+. "$dir/bash-functions"
+
+
+usage() {
+	blue "Usage:"
+	cat <<-USAGE
+		  $0 new-branch-name
+		  $0 repo new-branch-name
+		Example:
+		  # To create a branch named task-branch, and push it to origin
+		  $0 task-branch
+		  $0 origin task-branch
+		USAGE
+	exit 1
+}
+
+if [ -z "$1" ] || ! [ -z "$3" ]; then
+	usage
+fi
+
+if [ -z "$2" ]; then
+	branch="$1"
+	origin=origin
+else
+	branch="$2"
+	origin="$1"
+fi
+
+git checkout -b "$branch" || exit $?
+git push --set-upstream "$origin" "$branch"
