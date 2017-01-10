@@ -3,6 +3,13 @@
 dir="$(dirname "$(readlink -m "$0")")"
 . "$dir/bash-functions"
 
+# Since none of the actions here (including fetch) use the index file,
+# this prevents locking it, and allows for rstatus to work even if e.g.
+# we're in the middle of a merge or rebase.
+# This still shows that we're in the middle of an operation in the status
+# line - it just doesn't prevent anything from happening simultaneously.
+GIT_INDEX_FILE=.git/rstatus-index
+
 usage() {
 	blue "Usage:"
 	cat <<-USAGE
