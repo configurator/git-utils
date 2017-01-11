@@ -3,7 +3,7 @@
 dir="$(dirname "$(readlink -m "$0")")"
 . "$dir/bash-functions"
 
-num=20
+num=30
 if [[ $1 =~ ^[0-9]+$ ]]; then
 	num="$1"
 	shift
