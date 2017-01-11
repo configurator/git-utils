@@ -1,10 +1,12 @@
 This repository started its way as a fork of ddollar/git-utils. Some of the utilities here are from there, others are my own 
 creation, some loosely based on ddollar's versions.
 
+git-newbranch     - Creates a new branch, checks it out, and pushes the current state to the remote server, setting upstream tracking
 git-addremove     - Adds added files, removes deleted files
+
 git-last          - Simple alias; shows the last few commits (defaults to 1, accepts a number for different number of commits)
 git-tree          - Shows a graph of the repository's commits, branches and merges
-git-newbranch     - Creates a new branch, checks it out, and pushes the current state to the remote server, setting upstream tracking
+git-orphans       - Shows a graph, like tree, but includes all orphaned commits, e.g. once that have already been rebased
 
 git-incoming      - Shows incoming changes (this doesn't contact the server, so it's recommended to use git fetch first)
 git-outgoing      - Shows outgoing changes (which would be pushed to a remote server with git push)
