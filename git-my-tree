@@ -1,0 +1,5 @@
+#!/bin/bash
+
+user="$(git config --get user.email)"
+
+git tree "$@" --all --author=configurator@gmail.com
