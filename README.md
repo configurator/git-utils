@@ -24,3 +24,17 @@ Command             | Description
 `git rstatus`       | Shows complete status as compared to the origin (or other specified remote branch)
 `git sync`          | Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords
 `git srebase`       | Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
+
+### Screenshots
+
+###### `git tree`
+
+![git-tree](https://github.com/configurator/git-utils/blob/screenshots/git-tree.png)
+
+###### `git orphans`
+
+![git-orphans](https://github.com/configurator/git-utils/blob/screenshots/git-orphans.png)
+
+###### `git rstatus`
+
+![git-rstatus](https://github.com/configurator/git-utils/blob/screenshots/git-rstatus.png)
