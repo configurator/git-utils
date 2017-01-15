@@ -6,6 +6,8 @@ This repository started its way as a fork of [`ddollar/git-utils`](http://github
 
 Simply clone this repository, and put it in your path. Make sure bash considers the `git-*` files executable.
 
+_Note:_ All commands assume you are using a terminal and tools that supports ANSI color; if they are redirected, ANSI color is preserved. Some command line tools, such as `less`, support this with command line flags, but other tools, especially editors, may have a problem with that. If you are using these commands and redirecting output, I suggest using something like [strip-ansi](https://www.npmjs.com/package/strip-ansi) to remove these color codes.
+
 ### Utilities
 
 Command             | Description
