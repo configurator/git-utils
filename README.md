@@ -29,12 +29,12 @@ Command             | Description
 
 ###### `git tree`
 
-![git-tree](https://github.com/configurator/git-utils/blob/screenshots/git-tree.png)
+![git-tree](https://raw.githubusercontent.com/configurator/git-utils/screenshots/git-tree.png)
 
 ###### `git orphans`
 
-![git-orphans](https://github.com/configurator/git-utils/blob/screenshots/git-orphans.png)
+![git-orphans](https://raw.githubusercontent.com/configurator/git-utils/screenshots/git-orphans.png)
 
 ###### `git rstatus`
 
-![git-rstatus](https://github.com/configurator/git-utils/blob/screenshots/git-rstatus.png)
+![git-rstatus](https://raw.githubusercontent.com/configurator/git-utils/screenshots/git-rstatus.png)
