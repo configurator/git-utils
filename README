@@ -1,5 +1,9 @@
+# git-utils
+
 This repository started its way as a fork of ddollar/git-utils. Some of the utilities here are from there, others are my own 
 creation, some loosely based on ddollar's versions.
+
+## Utilities
 
 git newbranch     - Creates a new branch, checks it out, and pushes the current state to the remote server, setting upstream tracking
 git addremove     - Adds added files, removes deleted files
@@ -16,3 +20,7 @@ git rstatus       - Shows complete status as compared to the origin (or other sp
 git sync          - Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords
 
 git srebase       - Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
+
+## Installation
+
+Simply clone this repository, and put it in your path. Make sure bash considers the `git-*` files executable.
