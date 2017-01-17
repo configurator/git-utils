@@ -8,6 +8,8 @@ Simply clone this repository, and put it in your path. Make sure bash considers 
 
 To enable bash completion, copy or link the files from this repository's `bash_completion.d` to `/etc/bash_completion.d`. An install script, `install-git-utils-bash-completion`, is provided for convenience.
 
+_Note:_ All commands assume you are using a terminal and tools that supports ANSI color; if they are redirected, ANSI color is preserved. Some command line tools, such as `less`, support this with command line flags, but other tools, especially editors, may have a problem with that. If you are using these commands and redirecting output, I suggest using something like [strip-ansi](https://www.npmjs.com/package/strip-ansi) to remove these color codes.
+
 ### Utilities
 
 Command             | Description
@@ -24,3 +26,17 @@ Command             | Description
 `git rstatus`       | Shows complete status as compared to the origin (or other specified remote branch)
 `git sync`          | Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords
 `git srebase`       | Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
+
+### Screenshots
+
+###### `git tree`
+
+![git-tree](https://raw.githubusercontent.com/configurator/git-utils/screenshots/git-tree.png)
+
+###### `git orphans`
+
+![git-orphans](https://raw.githubusercontent.com/configurator/git-utils/screenshots/git-orphans.png)
+
+###### `git rstatus`
+
+![git-rstatus](https://raw.githubusercontent.com/configurator/git-utils/screenshots/git-rstatus.png)
