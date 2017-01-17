@@ -1,0 +1,23 @@
+_git_last() {
+	_git_log
+}
+
+_git_tree() {
+	_git_log
+}
+
+_git_orphans() {
+	_git_log
+}
+
+_git_my_tree() {
+	_git_log
+}
+
+_git_meta() {
+	_git_show
+}
+
+_git_srebase() {
+	_git_rebase
+}

@@ -6,6 +6,8 @@ This repository started its way as a fork of [`ddollar/git-utils`](http://github
 
 Simply clone this repository, and put it in your path. Make sure bash considers the `git-*` files executable.
 
+To enable bash completion, copy or link the files from this repository's `bash_completion.d` to `/etc/bash_completion.d`. An install script, `install-git-utils-bash-completion`, is provided for convenience.
+
 ### Utilities
 
 Command             | Description

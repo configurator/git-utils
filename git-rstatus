@@ -13,13 +13,16 @@ GIT_INDEX_FILE=.git/rstatus-index
 usage() {
 	blue "Usage:"
 	cat <<-USAGE
-		  $0
-		  $0 repo
-		  $0 repo/branch
+		  $0 [options] [repo[/branch]]
+
+		Options:
+		  --no-fetch
+		    Skip the fetch stage, and just show the state as we currently know it
+
 		Example:
 		  $0
 		  $0 origin
-		  $0 origin/master
+		  $0 --no-fetch origin/master
 		USAGE
 	exit 1
 }

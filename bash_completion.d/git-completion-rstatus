@@ -1,0 +1,13 @@
+_git_rstatus() {
+	case "$cur" in
+		-*)
+			__gitcomp "--no-fetch"
+			;;
+
+		*)
+			repos="$(git remote)"
+			branches="$(git branch -r | sed -e 's/..\([^ ]*\/[^ ]*\).*/\1/')"
+			__gitcomp "$repos $branches"
+			;;
+	esac
+} 2> /dev/null

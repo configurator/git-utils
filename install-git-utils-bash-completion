@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dir="$(dirname "$(readlink -m "$0")")/bash_completion.d"
+echo Linking "$dir"/*
+ln -s "$dir"/* /etc/bash_completion.d
