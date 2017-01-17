@@ -5,8 +5,8 @@ _git_rstatus() {
 			;;
 
 		*)
-			repos="$(git remote)"
-			branches="$(git branch -r | sed -e 's/..\([^ ]*\/[^ ]*\).*/\1/')"
+			local repos="$(git remote)"
+			local branches="$(git branch -r | sed -e 's/..\([^ ]*\/[^ ]*\).*/\1/')"
 			__gitcomp "$repos $branches"
 			;;
 	esac
