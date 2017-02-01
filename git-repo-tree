@@ -1,0 +1,8 @@
+#!/bin/bash
+
+repo="$1"
+shift
+
+branches="$(git branch --remote --list "$repo/*" --no-color | sed 's/^ *\([^ ]*\).*$/\1/')"
+
+git tree "$@" $branches
