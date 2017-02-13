@@ -18,6 +18,12 @@ if [[ $# > 1 ]]; then
     usage
 fi
 
+# Use colordiff by default, and diff if it doesn't exist
+difftool=colordiff
+if ! ( type $difftool > /dev/null 2>&1 ); then
+    difftool=diff
+fi
+
 local_branches() {
     echo "Branches in local:"
     git branch | sed 's#^[ *]*##'
@@ -29,4 +35,4 @@ remote_branches() {
     git branch -r | grep "$remote" | grep -v HEAD | sed 's#^[^/]*/##'
 }
 
-colordiff -y -w <(local_branches) <(remote_branches "$1")
+$difftool -y -w <(local_branches) <(remote_branches "$1")
