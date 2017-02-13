@@ -1,0 +1,32 @@
+#!/bin/bash
+
+dir="$(dirname "$(readlink -m "$0")")"
+. "$dir/bash-functions"
+
+usage() {
+	blue "Usage:"
+	cat <<-USAGE
+		  $0 [remote]
+
+		  Compares, side-by-side, local branches with currently known remote branches.
+		  Defaults to origin.
+		USAGE
+	exit 1
+}
+
+if [[ $# > 1 ]]; then
+    usage
+fi
+
+local_branches() {
+    echo "Branches in local:"
+    git branch | sed 's#^[ *]*##'
+}
+
+remote_branches() {
+    local remote="${1:-origin}"
+    echo "Branches in remote/$remote:"
+    git branch -r | grep "$remote" | grep -v HEAD | sed 's#^[^/]*/##'
+}
+
+colordiff -y -w <(local_branches) <(remote_branches "$1")

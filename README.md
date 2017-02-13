@@ -14,6 +14,7 @@ _Note:_ All commands assume you are using a terminal and tools that supports ANS
 
 Command             | Description
 --------------------|----------------------------------------------------
+`git clone-github`  | Simple alias for cloning a GitHub repo using ssh, accepts a username/repo rather than a full url
 `git newbranch`     | Creates a new branch, checks it out, and pushes the current state to the remote server, setting upstream tracking
 `git addremove`     | Adds added files, removes deleted files
 `git last`          | Simple alias for `git log`; shows the last few commits (defaults to 1, accepts a number for different number of commits)
@@ -26,6 +27,7 @@ Command             | Description
 `git incoming`      | Shows incoming changes (this doesn't contact the server, so it's recommended to use `git fetch` first)
 `git outgoing`      | Shows outgoing changes (which would be pushed to a remote server with `git push`)
 `git rstatus`       | Shows complete status as compared to the origin (or other specified remote branch)
+`git compare-branches` | Compares the list of local branches with branches on a remote
 `git sync`          | Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords
 `git srebase`       | Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
 
