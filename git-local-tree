@@ -1,0 +1,5 @@
+#!/bin/bash
+
+branches="$(git branch --list --no-color | sed 's/^[* ]*//')"
+
+git tree "$@" $branches

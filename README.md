@@ -22,6 +22,7 @@ Command             | Description
 `git tree`          | Shows a graph of the repository's commits, branches and merges
 `git my-tree`       | The same as `git tree`, except limited to commits by the current user (identified by email)
 `git orphans`       | Shows a graph, like `git tree`, but includes all orphaned commits, e.g. once that have already been rebased
+`git local-tree`    | Shows a graph, like `git tree`, but includes all local branches
 `git origin-tree`   | Shows a graph, like `git tree`, but includes all origin/* branches
 `git repo-tree`     | Like `git origin-tree`, but for a different remote. First argument must be a remote name
 `git incoming`      | Shows incoming changes (this doesn't contact the server, so it's recommended to use `git fetch` first)
