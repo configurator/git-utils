@@ -31,6 +31,7 @@ Command             | Description
 `git compare-branches` | Compares the list of local branches with branches on a remote
 `git sync`          | Performs a pull, merge/rebase, then a push. Can stash unsaved changes and pop afterwords
 `git srebase`       | Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
+`git gone`          | List or delete local branches which have been deleting on the upstream remote
 
 ### Screenshots
 

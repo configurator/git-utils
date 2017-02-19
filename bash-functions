@@ -75,3 +75,12 @@ parse_source_args() {
 			;;
 	esac
 }
+
+ask_yes_no() {
+    read -s -n 1 -r input
+    if [[ $input  == 'y' || $input == 'Y' ]]; then
+        return 0
+    else
+        return 1
+    fi
+}

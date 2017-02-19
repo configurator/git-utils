@@ -1,0 +1,24 @@
+#!/bin/bash
+
+dir="$(dirname "$(readlink -m "$0")")"
+. "$dir/bash-functions"
+
+git fetch --all --prune
+branchlist="$(git branch -vv | grep ': gone]' | sed 's#^[ *]*##' | awk '{print $1}')"
+
+if [ -z "$branchlist" ]; then
+    green No branches are gone
+    exit
+fi
+
+blue The following branches are gone:
+echo "$branchlist" | xargs -r -n 1 echo
+blue Would you like to delete them? [Y/n]
+
+if ask_yes_no; then
+    echo Yes
+    red Deleting branches
+    echo "$branchlist" | xargs -r -n 1 git branch -D
+else
+    echo No
+fi
