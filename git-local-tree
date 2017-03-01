@@ -1,5 +1,12 @@
 #!/bin/bash
 
-branches="$(git branch --list --no-color | sed 's/^[* ]*//')"
+branches=($(git branch --list --no-color | sed 's/^[* ]*//'))
 
-git tree "$@" $branches
+if [[ ${#branches[@]} > 0 ]]; then
+    base="$(git merge-base "${branches[@]}")"
+
+    echo -n git tree --base "$base" "$@" "${branches[@]}" | clip
+    git tree --base "$base" "$@" "${branches[@]}"
+else
+    git tree "$@" "${branches[@]}"
+fi
