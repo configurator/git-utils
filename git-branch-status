@@ -1,0 +1,26 @@
+#!/bin/bash
+
+branches() {
+    git branch | sed 's#^[ *]*##'
+}
+
+line() {
+    printf '%-40s %-7s %-7s\n' "$1" "$3" "$2"
+}
+
+color_green() {
+    echo -en "\033[32;1m"
+}
+
+color_reset() {
+    echo -en "\033[0m"
+}
+
+
+color_green
+line Branch Behind Ahead
+color_reset
+
+for b in $(branches); do
+    line $b $(git rev-list --left-right --count master..."$b")
+done

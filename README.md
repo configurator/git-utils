@@ -16,6 +16,7 @@ Command             | Description
 --------------------|----------------------------------------------------
 `git clone-github`  | Simple alias for cloning a GitHub repo using ssh, accepts a username/repo rather than a full url
 `git newbranch`     | Creates a new branch, checks it out, and pushes the current state to the remote server, setting upstream tracking
+`git branch-status` | Shows how far ahead and behind each branch is when compared to master
 `git addremove`     | Adds added files, removes deleted files
 `git last`          | Simple alias for `git log`; shows the last few commits (defaults to 1, accepts a number for different number of commits)
 `git meta`          | Simple alias for `git show`; shows metadata for a commit without the diff file
