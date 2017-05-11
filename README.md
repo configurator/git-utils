@@ -14,6 +14,7 @@ _Note:_ All commands assume you are using a terminal and tools that supports ANS
 
 Command             | Description
 --------------------|----------------------------------------------------
+`git repos`         | Lists all the git repos in subdirectories of the current directory (or specified in the command line), and their current branches
 `git clone-github`  | Simple alias for cloning a GitHub repo using ssh, accepts a username/repo rather than a full url
 `git newbranch`     | Creates a new branch, checks it out, and pushes the current state to the remote server, setting upstream tracking
 `git branch-status` | Shows how far ahead and behind each branch is when compared to master

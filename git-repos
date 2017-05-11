@@ -1,0 +1,39 @@
+#!/bin/bash
+
+directories=("$@")
+if [[ ${#directories[@]} == 0 ]]; then
+    directories=(*)
+fi
+
+line() {
+    printf '%-30s %-30s %-60s %-7s %-7s\n' "$1" "$2" "$3" "$5" "$4"
+}
+
+color_green() {
+    echo -en "\033[32;1m"
+}
+
+color_reset() {
+    echo -en "\033[0m"
+}
+
+color_green
+line Directory Branch Remote Behind Ahead
+color_reset
+
+for dir in "${directories[@]}"; do
+    if ! [ -d "$dir" ]; then
+        # No such directory
+        continue;
+    fi
+
+    pushd "$dir" > /dev/null
+
+    if git rev-parse --git-dir > /dev/null 2> /dev/null; then
+        # Success - is a git repo
+        branch="$(git branch | grep \* | sed 's/\* //' 2> /dev/null)"
+        line "$dir" "$branch" "$(git remote -v | head -1 | awk '{ printf $2; }')" $(git rev-list --left-right --count master..."$branch" 2> /dev/null)
+    fi
+
+    popd > /dev/null
+done
