@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. "$(dirname "$(readlink -m "$0")")/bash-functions"
+
+if [ $# -ne 1 ]; then
+	blue Usage
+	echo
+	echo $0 "<commit-ish>"
+	echo
+	echo Shows files changed in the given commit
+
+	exit 1
+fi
+
+git diff --name-only "$1" "$1"~1
