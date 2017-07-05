@@ -7,14 +7,14 @@ usage() {
 	cat <<-USAGE
 		  $0 [options] [repo[/branch]]
 		    Fetch, rebase, and push.
-		    
+
 		  repo/branch
-		    Specifies where to fetch from, pull to, and what to merge with. 
-		  
+		    Specifies where to fetch from, pull to, and what to merge with.
+
 		  options
 		    --stash
 		      Saves the current status in stash before syncing, and pops afterwards.
-		    
+
 		    --rebase
 		      Uses pull --rebase instead of merge
 
@@ -46,7 +46,7 @@ if $stash; then
 	old_stash_count=$(git stash list | wc -l)
 
 	green Stashing
-	git stash save
+	git stash save --include-untracked
 
 	new_stash_count=$(git stash list | wc -l)
 	if (( $new_stash_count == $old_stash_count )); then
