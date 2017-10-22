@@ -35,6 +35,7 @@ Command             | Description
 `git srebase`       | Performs an interactive rebase, stashing (and popping afterwards) if there are any local changes
 `git gone`          | List or delete local branches which have been deleting on the upstream remote
 `git files-chaned`  | Shows the list of files changed by a specific commit
+`git order`         | Outputs the given list of commits, ordered by their commit date (as hashes only). Useful before using cherry-pick.
 
 ### Screenshots
 
