@@ -36,6 +36,7 @@ Command             | Description
 `git gone`          | List or delete local branches which have been deleting on the upstream remote
 `git files-chaned`  | Shows the list of files changed by a specific commit
 `git order`         | Outputs the given list of commits, ordered by their commit date (as hashes only). Useful before using cherry-pick.
+`git parents`       | Finds the parents of a given commit (or list of commits) and outputs their hashes
 
 ### Screenshots
 
