@@ -37,6 +37,7 @@ Command             | Description
 `git files-chaned`  | Shows the list of files changed by a specific commit
 `git order`         | Outputs the given list of commits, ordered by their commit date (as hashes only). Useful before using cherry-pick.
 `git parents`       | Finds the parents of a given commit (or list of commits) and outputs their hashes
+`git identify-package` | Finds the name of a package from package.json - useful for repositories merging multiple packages (e.g. with git subtree)
 
 ### Screenshots
 
