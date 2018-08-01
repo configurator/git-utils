@@ -12,7 +12,7 @@ new_stash_count=$(git stash list | wc -l)
 stash=true
 if (( $new_stash_count == $old_stash_count )); then
 	# The stash save didn't do anything; turn off stashing so we don't pop anything either.
-	stash=0
+	stash=false
 fi
 
 green Rebasing
