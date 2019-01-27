@@ -30,4 +30,4 @@ else
 fi
 
 git checkout -b "$branch" || exit $?
-git push --set-upstream "$origin" "$branch"
+git push --set-upstream "$origin" "$branch" --no-verify
