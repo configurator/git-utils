@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sum() {
+	grep -o '[0-9]*' | xargs echo | tr ' ' '+' | bc
+}
+
+authors="$(git shortlog --summary | cut -f2-)"
+
+declare -A results
+declare -A totals
+
+sum=0
+IFS=$'\n'
+for author in $authors; do
+	allchanges="$(git log --author="$author" --shortstat --pretty=tformat:)"
+	insertions="$(echo "$allchanges" | grep -o ' [0-9]* insertion' | sum)"
+	deletions="$(echo "$allchanges" | grep -o ' [0-9]* deletion' | sum)"
+	total=$((insertions))
+
+	results[$author]="$author: $insertions insertions, $deletions deletions, total $total"
+	totals[$author]=$((insertions))
+
+	sum=$((sum+total))
+done
+
+for author in $authors; do
+	percentage=$((${totals[$author]} * 100 / $sum))
+	echo "${results[$author]} ($percentage%)"
+done
+
+echo "Total $sum changes"
